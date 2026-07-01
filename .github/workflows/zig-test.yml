@@ -1,0 +1,24 @@
+name: Zig Tests
+
+on:
+  push:
+    branches: [ "main", "allocator_development" ]
+  pull_request:
+    branches: [ "main", "allocator_development" ]
+
+jobs:
+  test:
+    name: Run Zig Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Zig
+        uses: mlugg/setup-zig@v2
+        with:
+          version: 0.17.0 
+
+      - name: Run tests
+        run: zig test stack_allocator.zig
