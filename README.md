@@ -80,4 +80,3 @@ Instantly resets the allocator, effectively freeing all memory and setting the `
 
 ## License
 MIT, see LICENSE file for details
-```
